@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LA verdadera MIlanga</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-black font-sans">
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <h1 class="text-3xl font-bold tracking-[0.4em]">NOIR</h1>
+
+      <nav class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
+        <a href="#home" class="hover:opacity-60 transition">Home</a>
+        <a href="#catalog" class="hover:opacity-60 transition">Catalog</a>
+        <a href="#about" class="hover:opacity-60 transition">About</a>
+        <a href="#contact" class="hover:opacity-60 transition">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <button class="text-sm uppercase tracking-widest hover:opacity-60">
+          Search
+        </button>
+
+        <button id="cart-button" class="text-sm uppercase tracking-widest hover:opacity-60">
+          Cart (<span id="cart-count">0</span>)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+    <img
+      src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1600&auto=format&fit=crop"
+      class="absolute inset-0 w-full h-full object-cover"
+      alt="fashion"
+    />
+
+    <div class="absolute inset-0 bg-black/30"></div>
+
+    <div class="relative z-10 text-center text-white px-6">
+      <h2 class="text-5xl md:text-8xl font-light tracking-[0.25em] uppercase mb-6">
+        New Collection
+      </h2>
+
+      <p class="max-w-2xl mx-auto text-lg md:text-xl opacity-90 mb-10">
+        Minimalism. Streetwear. Luxury. Discover the newest fashion drops.
+      </p>
+
+      <button class="bg-white text-black px-10 py-4 uppercase tracking-[0.2em] text-sm hover:bg-black hover:text-white transition duration-300 border border-white">
+        Shop Now
+      </button>
+    </div>
+  </section>
+
+  <!-- CATALOG -->
+  <section id="catalog" class="py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-center justify-between mb-14">
+        <h3 class="text-4xl uppercase tracking-[0.25em] font-light">
+          Featured
+        </h3>
+
+        <button class="uppercase tracking-widest text-sm border-b border-black pb-1 hover:opacity-60">
+          View All
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <!-- PRODUCT -->
+        <div class="group cursor-pointer overflow-hidden">
+          <div class="overflow-hidden bg-gray-100">
+            <img
+              src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop"
+              class="w-full h-[500px] object-cover group-hover:scale-105 transition duration-700"
+            />
+          </div>
+
+          <div class="pt-4 flex items-center justify-between">
+            <div>
+              <h4 class="uppercase tracking-widest text-sm">
+                Oversized Black Hoodie
+              </h4>
+              <p class="text-gray-500 mt-2">Premium Collection</p>
+            </div>
+
+            <span class="text-sm tracking-widest">$59.99</span>
+          </div>
+
+          <button onclick="addToCart()" class="mt-4 w-full border border-black py-3 uppercase tracking-[0.2em] text-xs hover:bg-black hover:text-white transition">
+            Add To Cart
+          </button>
+        </div>
+
+        <!-- PRODUCT -->
+        <div class="group cursor-pointer overflow-hidden">
+          <div class="overflow-hidden bg-gray-100">
+            <img
+              src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1200&auto=format&fit=crop"
+              class="w-full h-[500px] object-cover group-hover:scale-105 transition duration-700"
+            />
+          </div>
+
+          <div class="pt-4 flex items-center justify-between">
+            <div>
+              <h4 class="uppercase tracking-widest text-sm">
+                Minimal White Tee
+              </h4>
+              <p class="text-gray-500 mt-2">Premium Collection</p>
+            </div>
+
+            <span class="text-sm tracking-widest">$29.99</span>
+          </div>
+
+          <button onclick="addToCart()" class="mt-4 w-full border border-black py-3 uppercase tracking-[0.2em] text-xs hover:bg-black hover:text-white transition">
+            Add To Cart
+          </button>
+        </div>
+
+        <!-- PRODUCT -->
+        <div class="group cursor-pointer overflow-hidden">
+          <div class="overflow-hidden bg-gray-100">
+            <img
+              src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop"
+              class="w-full h-[500px] object-cover group-hover:scale-105 transition duration-700"
+            />
+          </div>
+
+          <div class="pt-4 flex items-center justify-between">
+            <div>
+              <h4 class="uppercase tracking-widest text-sm">
+                Streetwear Cargo Pants
+              </h4>
+              <p class="text-gray-500 mt-2">Premium Collection</p>
+            </div>
+
+            <span class="text-sm tracking-widest">$74.99</span>
+          </div>
+
+          <button onclick="addToCart()" class="mt-4 w-full border border-black py-3 uppercase tracking-[0.2em] text-xs hover:bg-black hover:text-white transition">
+            Add To Cart
+          </button>
+        </div>
+
+        <!-- PRODUCT -->
+        <div class="group cursor-pointer overflow-hidden">
+          <div class="overflow-hidden bg-gray-100">
+            <img
+              src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop"
+              class="w-full h-[500px] object-cover group-hover:scale-105 transition duration-700"
+            />
+          </div>
+
+          <div class="pt-4 flex items-center justify-between">
+            <div>
+              <h4 class="uppercase tracking-widest text-sm">
+                Luxury Beige Coat
+              </h4>
+              <p class="text-gray-500 mt-2">Premium Collection</p>
+            </div>
+
+            <span class="text-sm tracking-widest">$129.99</span>
+          </div>
+
+          <button onclick="addToCart()" class="mt-4 w-full border border-black py-3 uppercase tracking-[0.2em] text-xs hover:bg-black hover:text-white transition">
+            Add To Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNER -->
+  <section class="relative h-[70vh] overflow-hidden">
+    <img
+      src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1600&auto=format&fit=crop"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-6">
+      <p class="uppercase tracking-[0.4em] mb-6 text-sm">Limited Drop</p>
+
+      <h2 class="text-5xl md:text-7xl font-light uppercase tracking-[0.25em] mb-8">
+        Autumn Essentials
+      </h2>
+
+      <button class="border border-white px-10 py-4 uppercase tracking-[0.2em] text-sm hover:bg-white hover:text-black transition">
+        Explore
+      </button>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-28 px-6 bg-neutral-100">
+    <div class="max-w-5xl mx-auto text-center">
+      <p class="uppercase tracking-[0.4em] text-sm mb-6">About Us</p>
+
+      <h2 class="text-4xl md:text-6xl uppercase tracking-[0.2em] font-light leading-tight mb-10">
+        Designed for modern fashion culture.
+      </h2>
+
+      <p class="text-gray-700 leading-8 text-lg">
+        NOIR combines luxury minimalism with contemporary streetwear.
+        Every collection is curated to deliver premium aesthetics and timeless silhouettes.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-24 px-6 bg-white">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-4xl uppercase tracking-[0.25em] font-light mb-10">
+        Contact
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div>
+          <p class="uppercase tracking-[0.3em] text-sm mb-3">Instagram</p>
+          <p>@noir.store</p>
+        </div>
+
+        <div>
+          <p class="uppercase tracking-[0.3em] text-sm mb-3">WhatsApp</p>
+          <p>+54 11 9999-9999</p>
+        </div>
+
+        <div>
+          <p class="uppercase tracking-[0.3em] text-sm mb-3">Email</p>
+          <p>contact@noir.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white py-10 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <h3 class="text-2xl tracking-[0.4em] font-bold">NOIR</h3>
+
+      <div class="flex gap-6 uppercase tracking-widest text-sm">
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Support</a>
+      </div>
+
+      <p class="text-sm opacity-70">
+        © 2026 Castro PR — All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    let cart = 0;
+
+    function addToCart() {
+      cart++;
+      document.getElementById('cart-count').innerText = cart;
+    }
+  </script>
+
+</body>
+</html>
